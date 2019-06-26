@@ -1,0 +1,19 @@
+body {
+    background-image: url(https://www.southbostonanimalhospital.com/hs-fs/hubfs/Blog/SH_angry-cat-blog.jpg?width=816&name=SH_angry-cat-blog.jpg)
+}
+
+h1 {
+    font-size: 120px;
+    background: grey;
+    text-align: center;
+}
+
+div {
+    text-align: center;
+    background-color: rgba(89, 99, 0, 0.5)
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
