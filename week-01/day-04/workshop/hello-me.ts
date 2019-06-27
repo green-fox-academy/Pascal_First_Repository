@@ -1,1 +1,1 @@
-console.log('Hello Master Pascal')
+console.log('Hello Master Pascal');
