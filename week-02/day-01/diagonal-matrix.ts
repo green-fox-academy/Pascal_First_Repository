@@ -27,4 +27,6 @@ for (let i: number = 0; i < size; i++) {
     } colums[i] = row;
 }
 
-console.log()
+colums.forEach(function (item) {
+    console.log(item.join("  "))
+})
