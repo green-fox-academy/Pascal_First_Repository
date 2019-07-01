@@ -21,7 +21,7 @@ for (let i: number = 0; i < lineCount2; i++) {
     let numOfStars: number = 2 * i + 1;
     let numOfSpaces: number = lineCount2 + i - numOfStars;
     
-    for ()
+   // for ();
 
     console.log(Array(numOfSpaces + 1).join(' ') + Array(numOfStars + 1).join('*'));
 }
