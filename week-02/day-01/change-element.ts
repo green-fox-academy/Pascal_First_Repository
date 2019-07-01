@@ -12,4 +12,4 @@ let numList = [1, 2, 3, 8, 5, 6].map(function (i) {
         return i
     }
 })
-console.log(numList);
+console.log(numList[3]);
