@@ -24,3 +24,12 @@ let hisPuppy: string[] = ['Tappancs', 'Lusta', 'Csibesz'];
 for(let i : number =0; i < myPuppy.length; i++) {
     console.log(myPuppy[0]);
 }
+
+let diffArray: [string, boolean] = ['Mark', true];
+
+//tople ^
+
+let diffArray2: any[] = ['Pascal', 'Eszti'];
+
+let diffArray3: Array<string | number> = [];
+
