@@ -24,3 +24,12 @@ console.log(numList);
 
 let numList3 = [3, 4, 5, 6, 7];
 
+function reverseArray(numList3) {
+    let newArray = [];
+    for (let i = numList3.length - 1; i >= 0; i--) {
+        newArray.push(numList3[i]);
+    }
+    return newArray;
+}
+
+reverseArray
