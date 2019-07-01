@@ -15,26 +15,13 @@
 //
 // The diamond should have as many lines as lineCount is
 
+let lineCount2: number = 10;
 
-//function generateTriangle(num) {
-//    let number = '';
-//  
-//    for (let i = 1; i <= num; i++) {
-//      console.log(number += '*');
-//    }
-//  }
-//  generateTriangle(10);
+for (let i: number = 0; i < lineCount2; i++) {
+    let numOfStars: number = 2 * i + 1;
+    let numOfSpaces: number = lineCount2 + i - numOfStars;
+    
+    for ()
 
-let lineCount: number = 10;
-
-let a: number = 1;
-let stars: string = '';
-
-while (a <= lineCount) {
-
-stars +- '*';
-
-console.log(stars);
-a++;
-
+    console.log(Array(numOfSpaces + 1).join(' ') + Array(numOfStars + 1).join('*'));
 }

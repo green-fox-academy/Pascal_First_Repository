@@ -5,3 +5,5 @@ let average: number = 17 * 52
 
 console.log(daily * days * semester);
 console.log((`${Math.round(100 / average * daily * days * semester)}%`));
+
+
