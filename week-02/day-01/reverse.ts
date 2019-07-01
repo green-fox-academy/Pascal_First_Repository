@@ -11,3 +11,15 @@ let numList = [3, 4, 5, 6, 7].reverse();
 
 console.log(numList)
 
+
+let numList2 = [3, 4, 5, 6, 7];
+
+let temp: number = numList2[0]
+
+numList2[0] = numList2[4];
+numList2[1] = numList2[3];
+numList2[4] = temp;
+
+console.log(numList);
+
+let numList3 = [3, 4, 5, 6, 7];
