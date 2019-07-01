@@ -12,6 +12,7 @@ let numList = [3, 4, 5, 6, 7].reverse();
 console.log(numList)
 
 
+
 let numList2 = [3, 4, 5, 6, 7];
 
 let temp: number = numList2[0]
@@ -22,7 +23,9 @@ numList2[4] = temp;
 
 console.log(numList);
 
-let numList3 = [3, 4, 5, 6, 7];
+
+
+let numList3 = [3, 12, 5, 8, 7];
 
 function reverseArray(numList3) {
     let newArray = [];
@@ -32,4 +35,4 @@ function reverseArray(numList3) {
     return newArray;
 }
 
-reverseArray
+console.log(reverseArray(numList3))
