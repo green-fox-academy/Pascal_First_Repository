@@ -23,3 +23,4 @@ numList2[4] = temp;
 console.log(numList);
 
 let numList3 = [3, 4, 5, 6, 7];
+
