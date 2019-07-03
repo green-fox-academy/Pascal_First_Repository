@@ -39,13 +39,13 @@ const canvasWidth = 600;
 const canvasHeigth = 400;
 
 function calcColor(min, max, val) {
-    let minHue = 240, maxHue = 0;
-    let curPercent = (val - min) / (max - min);
-    let color = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ", 100%, 50%)";
-    return color;
+	let minHue = 240, maxHue = 0;
+	let curPercent = (val - min) / (max - min);
+	let color = "hsl(" + ((curPercent * (maxHue - minHue)) + minHue) + ", 100%, 50%)";
+	return color;
 }
 
-for (var i = 400; i > 0; i -= 1) {
-    ctx.fillStyle = calcColor(240, 0, i);
-    ctx.fillRect(canvasWidth / 2 - i / 2, canvasHeigth / 2 - i / 2, i, i);
+for (let i = 400; i > 0; i -= 1) {
+	ctx.fillStyle = calcColor(240, 0, i);
+	ctx.fillRect(canvasWidth / 2 - i / 2, canvasHeigth / 2 - i / 2, i, i);
 }
