@@ -23,12 +23,17 @@ moveRectangle(300, 300);
 moveRectangle(154, 178);
 
 
-for (let i = 0; i < 4; i++);
+//for (let i: number = 0; i < 4; i++) {
+//
+//    let color: number = Math.floor(Math.random() * 255)
+//    let x: number = Math.floor(Math.random() * (canvas.height / 2));
+//    let y: number = Math.floor(Math.random() * (canvas.width / 2));
+//    let a: number = Math.floor(Math.random() * (canvas.height / 2));
+//    let b: number = Math.floor(Math.random() * (canvas.width / 2));
+//
+//    ctx.fillStyle = `rgb(${color}, ${255 - color}, ${color})`;
+//    ctx.fillRect(x, y, a, b);
+//};
 
-let color: number = Math.floor(Math.random() * 255)
-let x: number = Math.floor(Math.random() * (canvas.height / 2));
-let y: number = Math.floor(Math.random() * (canvas.width / 2));
-let a: number = Math.floor(Math.random() * (canvas.height / 2))
-let b: number = Math.floor(Math.random() * (canvas.width / 2));
 
 
