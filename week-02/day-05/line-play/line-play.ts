@@ -18,6 +18,10 @@ let x: number;
 let y: number;
 
 
+let transX = canvas.width * 0.5,
+    transY = canvas.height * 0.5;
+
+
 for (x = 0; x <= canvasWidth; x += 20) {
     for (y = 0; y <= canvasHeight; y += 20) {
         if (x === 0) {
