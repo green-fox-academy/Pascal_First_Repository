@@ -16,30 +16,22 @@ let canvasWidth: number = canvas.width / 2;
 //let stepY: number = canvasHeigth / numberOfLines;
 
 let x: number;
+let y: number;
+let step: number = 10;
 
-function drawTop(a: number) {
-    for (let x = -canvasWidth; x <= 0; x += 10)
-        ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(0, a);
-    ctx.stroke();
-}
-
-function drawBottom(b: number) {
-    for (let x = -canvasWidth; x <= 0; x += 10)
-        ctx.beginPath();
-    ctx.moveTo(x, 0);
+function draw(a: number, b: number) {
+    ctx.beginPath();
+    ctx.moveTo(a, 0);
     ctx.lineTo(0, b);
     ctx.stroke();
 }
 
-
-for (let i = 0; i < canvasWidth; i += 10) {
-    for (let j = 0; j > -canvasWidth; j -= 10) {
-        if (x < 0) {
-            drawTop(j);
-        } else {
-            drawTop(i);
-        }
+for (let i = -canvasWidth; i <= canvasWidth; i += step) {
+    if (i < 0) {
+        draw(i, -canvasWidth - i);
+        draw(i, canvasWidth + i);
+    } else {
+        draw(i, -canvasWidth + i);
+        draw(i, canvasWidth - i);
     }
 }
