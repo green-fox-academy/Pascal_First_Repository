@@ -17,20 +17,29 @@ let canvasWidth: number = canvas.width / 2;
 
 let x: number;
 
-function draw(a, b) {
+function drawTop(a: number) {
     for (let x = -canvasWidth; x <= 0; x += 10)
         ctx.beginPath();
     ctx.moveTo(x, 0);
     ctx.lineTo(0, a);
     ctx.stroke();
-    ctx.beginPath();
+}
+
+function drawBottom(b: number) {
+    for (let x = -canvasWidth; x <= 0; x += 10)
+        ctx.beginPath();
     ctx.moveTo(x, 0);
     ctx.lineTo(0, b);
     ctx.stroke();
 }
 
-for (let i: number = 0, i <canvasWidth; i += 10) {
-    for (let j: number = 0; i > -canvasWidth; j -= 10) {
-        draw(i, j);
+
+for (let i = 0; i < canvasWidth; i += 10) {
+    for (let j = 0; j > -canvasWidth; j -= 10) {
+        if (x < 0) {
+            drawTop(j);
+        } else {
+            drawTop(i);
+        }
     }
 }
