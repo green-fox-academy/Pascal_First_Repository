@@ -14,8 +14,6 @@ let wildPokemon: Pokemon = new Pokemon("Oddish", "leaf", "water");
 
 // Which pokemon should Ash use?
 
-console.log("I choose you, ");
-
 function initializePokemon(): Pokemon[] {
   return [
     new Pokemon("Balbasaur", "leaf", "water"),
@@ -25,3 +23,25 @@ function initializePokemon(): Pokemon[] {
     new Pokemon("Kingler", "water", "fire")
   ];
 }
+
+class pokeBall {
+  pokemons: Pokemon[];
+
+  constructor(pokemons: Pokemon[]) {
+    this.pokemons = pokemons;
+  }
+
+  pokemonChecker(pokemon: Pokemon): Pokemon {
+    let x: Pokemon[] = this.pokemons;
+    for (let i = 0; i < x.length; i++) {
+      if (x[i].isEffectiveAgainst(pokemon)) {
+        return x[i];
+      }
+    }
+  }
+}
+
+let allPokemons = new pokeBall(pokemonOfAsh);
+let chosenPokemon: Pokemon = allPokemons.pokemonChecker(wildPokemon);
+
+console.log(`I choose you, ${chosenPokemon.name}!`);
