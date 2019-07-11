@@ -17,6 +17,16 @@ class Thing {
   getCompleted(): boolean {
     return this.completed;
   }
+
+  toString():string {
+    let x: string;
+    if (this.completed) {
+      x = "[X]"
+    } else {
+      x = "[ ]"
+    }
+    return x + ' ' + this.name;
+  }
 }
 
 export { Thing };

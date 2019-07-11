@@ -14,6 +14,14 @@ class Fleet {
   getThings(): Thing[] {
     return this.things;
   }
+
+  toString(): string {
+    return this.things
+      .map(function(thing: Thing) {
+        return thing.toString();
+      })
+      .join("\n");
+  }
 }
 
 export { Fleet };

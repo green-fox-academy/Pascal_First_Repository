@@ -21,5 +21,22 @@ let fleet = new Fleet();
 // Hint: You have to create a `print()` method as well
 
 class FleetOfThings {
-  constructor(parameters) {}
+  fleet: Fleet = new Fleet();
+
+  constructor() {
+    this.fleet = new Fleet();
+    this.fleet.add(new Thing("Get milk"));
+    this.fleet.add(new Thing("Remove the obstacles"));
+    this.fleet.add(new Thing("Stand up"));
+    this.fleet.add(new Thing("Eat lunch"));
+    this.fleet.getThings()[2].complete();
+    this.fleet.getThings()[3].complete();
+  }
+
+  print(): string {
+    return this.fleet.toString();
+  }
 }
+
+let newList: FleetOfThings = new FleetOfThings();
+console.log(newList.print());
