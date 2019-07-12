@@ -9,11 +9,12 @@ function powerNEasy(x: number, y: number) {
 function powerN(x: number, y: number) {
   let baseNumber: number = x;
   let num: number = baseNumber;
-  if (num == x ** y) {
+  let power: number = y;
+  if (num === baseNumber ** power) {
     return 0;
-  } else if (x >= 1 && y >= 1) {
-    let newNum = x * num;
-    num = x * powerN(newNum, y);
+  } else if (baseNumber >= 1 && power >= 1) {
+    let newNum: number = x * num;
+    num = x * powerN(newNum, power);
   }
 }
 
