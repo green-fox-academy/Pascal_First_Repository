@@ -3,28 +3,21 @@
 import { Plant } from "./plants";
 
 class Flower extends Plant {
-  flowerAbsorptionLevel: number;
-  flowerMinWaterLevel: number;
+  protected flowerAbsorptionLevel: number;
+  protected flowerMinWaterLevel: number;
+  type: string = "Flower";
 
   constructor(
     color: string,
-    currentWaterLevel: number,
-    absorptionLevel: number,
-    minWaterLevel: number,
+    currentWaterLevel: number = 0,
+    absorptionLevel: number = 1,
+    minWaterLevel: number = 1,
     flowerAbsorptionLevel: number = 0.75,
     flowerMinWaterLevel: number = 5
   ) {
     super(color, currentWaterLevel, absorptionLevel, minWaterLevel);
     this.absorptionLevel = absorptionLevel * flowerAbsorptionLevel;
     this.minWaterLevel = flowerMinWaterLevel;
-  }
-
-  info() {
-    if (this.currentWaterLevel < this.minWaterLevel) {
-      return `The ${this.color} Flower needs water`;
-    } else {
-      return `The ${this.color} Flower doesn't need water`;
-    }
   }
 }
 export { Flower };
