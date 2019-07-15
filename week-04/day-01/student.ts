@@ -7,10 +7,13 @@ class Student extends Person {
   skippedDays: number;
 
   constructor(
+    name: string = "Jane Doe",
+    age: number = 30,
+    gender: string = "female",
     previousOrganization: string = "The School of Life",
     skippedDays: number = 0
   ) {
-    super();
+    super(name, age, gender);
     this.previousOrganization = previousOrganization;
     this.skippedDays = skippedDays;
   }
