@@ -17,7 +17,7 @@ abstract class Animal {
     return this.name;
   }
 
-  multiplyingBy() {}
+  abstract multiplyingBy();
 
   makeLove() {
     return this.multiplyingBy();
