@@ -8,6 +8,12 @@ interface Reservationy {
 }
 
 class Reservation implements Reservationy {
+  reservationCodeLength: number;
+
+  constructor(length: number) {
+    this.reservationCodeLength = length;
+  }
+
   getRandomInt(max): number {
     return Math.floor(Math.random() * Math.floor(max));
   }
@@ -16,22 +22,22 @@ class Reservation implements Reservationy {
     return arrayName[this.getRandomInt(arrayName.length)];
   }
 
-  getRandomizedCode(arrayName) {
-    return `${this.getRandomArrayObject(arrayName)}${this.getRandomArrayObject(
-      arrayName
-    )}${this.getRandomArrayObject(arrayName)}${this.getRandomArrayObject(
-      arrayName
-    )}${this.getRandomArrayObject(arrayName)}${this.getRandomArrayObject(
-      arrayName
-    )}${this.getRandomArrayObject(arrayName)}${this.getRandomArrayObject(
-      arrayName
-    )}`;
+  cleanerRandomizedCode(arrayName: string[]) {
+    let tempArray: string[] = [];
+    let tempString: string;
+    for (let i = 0; i < this.reservationCodeLength; i++) {
+      tempArray.push(this.getRandomArrayObject(arrayName));
+    }
+    tempString = tempArray.join("");
+    return tempString;
   }
+
   getDowBooking(): string {
     return this.getRandomArrayObject(daysArray);
   }
+
   getCodeBooking(): string {
-    return this.getRandomizedCode(characterArray);
+    return this.cleanerRandomizedCode(characterArray);
   }
 
   getList(): string {
@@ -39,13 +45,13 @@ class Reservation implements Reservationy {
   }
 }
 
-let randomObject1: Reservation = new Reservation();
-let randomObject2: Reservation = new Reservation();
-let randomObject3: Reservation = new Reservation();
-let randomObject4: Reservation = new Reservation();
-let randomObject5: Reservation = new Reservation();
-let randomObject6: Reservation = new Reservation();
-let randomObject7: Reservation = new Reservation();
+let randomObject1: Reservation = new Reservation(8);
+let randomObject2: Reservation = new Reservation(8);
+let randomObject3: Reservation = new Reservation(8);
+let randomObject4: Reservation = new Reservation(8);
+let randomObject5: Reservation = new Reservation(8);
+let randomObject6: Reservation = new Reservation(8);
+let randomObject7: Reservation = new Reservation(8);
 
 console.log(randomObject1.getList());
 console.log(randomObject2.getList());
@@ -54,3 +60,21 @@ console.log(randomObject4.getList());
 console.log(randomObject5.getList());
 console.log(randomObject6.getList());
 console.log(randomObject7.getList());
+
+//Before:
+//
+//getRandomizedCode(arrayName) {
+//    return `${this.getRandomArrayObject(arrayName)}${this.getRandomArrayObject(
+//      arrayName
+//    )}${this.getRandomArrayObject(arrayName)}${this.getRandomArrayObject(
+//      arrayName
+//    )}${this.getRandomArrayObject(arrayName)}${this.getRandomArrayObject(
+//      arrayName
+//    )}${this.getRandomArrayObject(arrayName)}${this.getRandomArrayObject(
+//      arrayName
+//    )}`;
+//  }
+//
+//  getCodeBooking(): string {
+//    return this.getRandomizedCode(characterArray);
+//  }
