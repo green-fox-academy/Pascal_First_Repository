@@ -6,6 +6,6 @@ import { Apple } from "./apples";
 test(t => {
   const fruit = new Apple();
 
-  t.equals(fruit.getApple(), "apples");
+  t.equals(fruit.getApple(), "apple");
   t.end();
 });
