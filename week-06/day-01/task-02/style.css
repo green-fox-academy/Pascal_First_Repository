@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    align-content: stretch
+}
+
+.item {
+    align-self: flex;
+    flex-direction: column;
+    height: 200px;
+}
+
+.green {
+    background: #51D400;
+    width: 50%
+}
+
+.yellow {
+    background: #FFD62A;
+    width: 100%
+}
+
+.purple {
+    background: #B02AFF;
+    width: 50%
+}
