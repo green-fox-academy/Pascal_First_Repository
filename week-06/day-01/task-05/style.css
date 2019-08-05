@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 500px;
+    background: #FFD62A;
+}
+
+.item {
+    align-self: center;
+    height: 50px;
+    width: 50px;
+}
+
+.purple {
+    background: #B02AFF;
+}
