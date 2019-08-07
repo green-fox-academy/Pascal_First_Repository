@@ -1,0 +1,28 @@
+.h1 {
+  font-weight: bolder;
+}
+
+.nav {
+  text-transform: uppercase;
+  color: #b87f8b;
+}
+
+.li {
+  display: flex;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.name {
+  width: 300px;
+}
+
+.price {
+  width: 60px;
+}

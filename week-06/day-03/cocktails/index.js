@@ -58,25 +58,25 @@ const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-app.use('/static', express.static('static'));
+app.use(express.static('assets'));
 
 // home page
 app.get('/', (req, res) => {
   let cocktailsToPrint = [];
-  let alcoholType = req.query.alcohol;
-  if (alcoholList.includes(alcoholType)) {
+  let alcohol = req.query.alcohol;
+  if (alcoholList.includes(alcohol)) {
     for (let i = 0; i < cocktails.length; i++) {
-      if (cocktails[i].contains.includes(alcoholType)) {
+      if (cocktails[i].contains.includes(alcohol)) {
         cocktailsToPrint.push(cocktails[i]);
       }
     }
-  } else if (alcoholType === undefined) {
+  } else if (alcohol === undefined) {
     cocktailsToPrint = cocktails;
   }
   res.render('home', {
     cocktails: cocktailsToPrint,
     alcoholList: alcoholList,
-    alcoholType: alcoholType
+    alcohol: alcohol
   });
 });
 
