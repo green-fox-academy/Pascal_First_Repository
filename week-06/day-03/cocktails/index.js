@@ -58,7 +58,7 @@ const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-app.use(express.static('assets'));
+app.use(express.static('root'));
 
 // home page
 app.get('/', (req, res) => {

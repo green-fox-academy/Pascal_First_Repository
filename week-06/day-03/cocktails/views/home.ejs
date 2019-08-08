@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>Cocktails</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 
-<body>
+<body class="body">
 
-    <h1>Cocktails</h1>
+    <h1 class="title">Cocktails</h1>
 
     <nav>
         <a href="/">all</a>
@@ -27,7 +28,7 @@
         <% for (let i = 0; i < cocktails.length; i++) {%>
         <% let isGrey = i % 2 === 0 %>
 
-        <li>
+        <li class="main">
             <div class="name <%= `${isGrey}`%>">
                 <%= cocktails[i].name%>
                 <% if(cocktails[i].isAlcoholic === false) {%>
