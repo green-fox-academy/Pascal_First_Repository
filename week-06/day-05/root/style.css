@@ -25,7 +25,24 @@ body {
   transform: scale(1.5, 1.5) rotate(180deg);
 }
 
-.imglist {
+.mainbox {
+  display: flex;
+}
+
+.navimg {
+  position: relative;
+}
+
+.textbox {
+  flex-direction: column;
+  position: absolute;
+  align-self: flex-end;
+  background-color: hsla(50, 33%, 25%, 0.4);
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.imgList {
   display: flex;
   flex-direction: row;
   justify-content: center;
