@@ -5,12 +5,6 @@ const app = express();
 app.use(express.json());
 const PORT = 8080;
 
-app.use(express.static('assets'));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 app.post('/arrays', (req, res) => {
   let action = req.body.what;
   let input = req.body.numbers;
