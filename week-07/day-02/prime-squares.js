@@ -22,7 +22,6 @@ const primeChecker = div => {
 };
 
 let counter = 0;
-
 function asd() {
   if (counter >= primeCheckerList.length) {
     clearInterval(dsa);
