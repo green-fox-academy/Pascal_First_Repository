@@ -41,19 +41,44 @@ const arrayToUse = [
     path: '8.jpg',
     title: 'string',
     content: 'string'
+  },
+  {
+    path: '9.jpg',
+    title: 'string',
+    content: 'string'
+  },
+  {
+    path: '10.jpg',
+    title: 'string',
+    content: 'string'
+  },
+  {
+    path: '11.jpg',
+    title: 'string',
+    content: 'string'
+  },
+  {
+    path: '12.jpg',
+    title: 'string',
+    content: 'string'
+  },
+  {
+    path: '13.jpg',
+    title: 'string',
+    content: 'string'
   }
 ];
 
 const imgList = document.querySelector('.imgList');
-console.log(imgList);
 
 document.querySelector('.navimg').setAttribute('src', `${arrayToUse[0].path}`);
 document.querySelector('h2').textContent = `${arrayToUse[0].title}`;
 document.querySelector('p').textContent = `${arrayToUse[0].content}`;
 
 const navImgNumber = 5;
+const thumbnailImgCount = 5;
 
-for (let i = 0; i < navImgNumber; i++) {
+for (let i = 0; i < thumbnailImgCount; i++) {
   let smallImg = document.createElement('img');
   smallImg.src = arrayToUse[i].path;
   smallImg.className = 'tiny';
@@ -85,3 +110,24 @@ function navigate(number) {
     arrayToUse[index + number].content
   }`;
 }
+
+/* setTimeout(thumbnailcreator, 0);
+
+function modifier(num) {
+  if (num === 1) {
+    thumbnailModifier++;
+    setTimeout(thumbnailCleaner, 0);
+    setTimeout(thumbnailcreator, 0);
+  } else if (num === -1) {
+    thumbnailModifier--;
+    setTimeout(thumbnailCleaner, 0);
+    setTimeout(thumbnailcreator, 0);
+  }
+}
+
+function thumbnailCleaner() {
+  let smallImg = document.getElementsByClassName('.tiny');
+  while (smallImg.firstChild) {
+    smallImg.removeChild(smallImg.firstChild);
+  }
+} */

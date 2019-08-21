@@ -45,9 +45,16 @@ body {
   width: 100%;
 }
 
+.thumbnail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .imgList {
   display: flex;
   flex-direction: row;
+
   justify-content: center;
 }
 
