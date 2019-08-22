@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        button {
+            margin: 16px;
+        }
+
+        .img-inspector {
+            margin: 0 auto;
+            width: 500px;
+            height: 320px;
+            border: 1px solid #3a3a3a;
+            background-image: url("../assets/mp.jpg");
+            background-size: 200%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <button data-action="move" data-direction="up">Up</button>
+        <button data-action="move" data-direction="down">Down</button>
+        <button data-action="move" data-direction="left">Left</button>
+        <button data-action="move" data-direction="right">Right</button>
+        <button data-action="zoom" data-direction="in">Zoom in</button>
+        <button data-action="zoom" data-direction="out">Zoom out</button>
+    </nav>
+    <div class="img-inspector">
+    </div>
+
+    <!-- You can work in the html or in a separate js file. Like:
+    <script>
+      Here is an image inspector, but the buttons are not implemented yet, that will
+      be your task!
+       - the nav buttons (up, down, left, right) move the background by 10px
+       - the zoom buttons increase/decrease the image by 20%
+       - attach only two event listeners to the nav element
+         - one for navigation
+         - one for zooming
+    </script>
+    -->
+
+    <script>
+        document.querySelector('.img-inspector').style.background = "url('https://techcrunch.com/wp-content/uploads/2015/04/codecode.jpg?w=730&crop=1')";
+        let size = 100;
+        let posX = 0;
+        let posY = 0;
+
+        function change(direction) {
+            if (direction === 'up') {
+                posY -= 10
+                imgToChange.style.backgroundPosition = `${posX}px ${posY}px`
+            } else if (direction === 'down') {
+                posY += 10
+                imgToChange.style.backgroundPosition = `${posX}px ${posY}px`
+            } else if (direction === 'left') {
+                posX -= 10
+                imgToChange.style.backgroundPosition = `${posX}px ${posY}px`
+            } else if (direction === 'right') {
+                posX += 10
+                imgToChange.style.backgroundPosition = `${posX}px ${posY}px`
+            } else if (direction === 'in') {
+                size -= 20
+                imgToChange.style.backgroundSize = `${size}%`
+            } else if (direction === 'out') {
+                size += 20
+                imgToChange.style.backgroundSize = `${size}%`
+            }
+        }
+        imgToChange = document.querySelector('.img-inspector')
+
+        document.querySelector('nav').addEventListener('click', function (e) {
+            if (e.target.dataset.direction === 'down') { change('down') }
+            else if (e.target.dataset.direction === 'up') { change('up') }
+            else if (e.target.dataset.direction === 'left') { change('left') }
+            else if (e.target.dataset.direction === 'right') { change('right') }
+            else if (e.target.dataset.direction === 'in') { change('in') }
+            else if (e.target.dataset.direction === 'out') { change('out') }
+        })
+    </script>
+</body>
+
+</html>
