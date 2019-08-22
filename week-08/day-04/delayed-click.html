@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+
+    <button>CLICK ME</button>
+
+    <script>
+        function sendMessage() {
+            setTimeout(function () {
+                let message = document.createElement('div')
+                message.textContent = '2 seconds ellapsed'
+                document.body.appendChild(message)
+            }, 2000)
+        }
+
+        document.querySelector('button').addEventListener('click', sendMessage)
+    </script>
+</body>
+
+</html>
