@@ -10,7 +10,15 @@
 
 let candyList = 0;
 let lollipopList = 0;
-let amount = Math.floor(lollipopList / 10);
+let lollipopText = '';
+let time = 1000;
+
+function addCandy() {
+  let amount = Math.floor(lollipopList / 10);
+  candyList += amount;
+  document.querySelector('.speed').textContent = `${amount}`;
+  document.querySelector('.candies').textContent = `${candyList}`;
+}
 
 document.querySelector('.create-candies').addEventListener('click', function() {
   candyList += 10;
@@ -21,24 +29,17 @@ document.querySelector('.buy-lollypops').addEventListener('click', function() {
   if (candyList >= 10) {
     candyList -= 10;
     lollipopList++;
+    lollipopText += '🍭';
     document.querySelector('.candies').textContent = `${candyList}`;
-    document.querySelector('.lollypops').textContent = `${lollipopList}`;
-    document.querySelector('.speed').textContent = `${amount}`;
+    document.querySelector('.lollypops').textContent = `${lollipopText}`;
+    if (lollipopList >= 10) {
+      setInterval(addCandy, time);
+    }
   }
 });
 
 document.querySelector('.candy-machine').addEventListener('click', function() {
-  amount *= 10;
+  time /= 10;
   document.querySelector('.candies').textContent = `${candyList}`;
-  document.querySelector('.lollypops').textContent = `${lollipopList}`;
-  document.querySelector('.speed').textContent = `${amount}`;
+  document.querySelector('.lollypops').textContent = `${lollipopText}`;
 });
-
-if (lollipopList >= 10) {
-  setInterval(function() {
-    candyList += amount;
-    document.querySelector('.candies').textContent = `${candyList}`;
-    document.querySelector('.lollypops').textContent = `${lollipopList}`;
-    document.querySelector('.speed').textContent = `${amount}`;
-  }, 1000);
-}
