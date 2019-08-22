@@ -21,13 +21,14 @@
             clearTimeout(delay)
             if (clicks < 2 && document.querySelector('div')) {
                 clicks++
-                console.log(clicks)
-            } else if (clicks === 2 && document.querySelector('div')) {
+            } else if (document.querySelector('div')) {
                 let message = document.createElement('p')
                 message.textContent = '5 seconds elapsed and clicked 3 times'
                 document.body.appendChild(message)
             }
         })
+
+
     </script>
 </body>
 
