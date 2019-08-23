@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Workshop: Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form">
+        <h1>Animal lovers</h1>
+        <div class="questions">
+            <p>What is your favourite pet?</p>
+            <div class="question">
+                <input type="radio" id="dog" name="favourite" />
+                <label for="dog">Dog</label>
+            </div>
+            <div class="question">
+                <input type="radio" id="cat" name="favourite" />
+                <label for="cat">Cat</label>
+            </div>
+            <div class="question">
+                <input type="radio" id="fish" name="favourite" />
+                <label for="fish">Viktor the goldfish</label>
+            </div>
+        </div>
+        <div class="facts">
+            <p>Do you want to sign up for cat facts?</p>
+            <div class="question">
+                <input type="radio" id="yes" name="sign-up" />
+                <label for="yes">Yes</label>
+            </div>
+            <div class="question">
+                <input type="radio" id="no" name="sign-up" />
+                <label for="no">No</label>
+            </div>
+        </div>
+        <div class="buttons">
+            <button disabled>I love cats</button>
+            <input type="submit" value="Sign up" disabled />
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
