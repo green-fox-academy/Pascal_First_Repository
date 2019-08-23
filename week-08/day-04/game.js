@@ -40,6 +40,4 @@ document.querySelector('.buy-lollypops').addEventListener('click', function() {
 
 document.querySelector('.candy-machine').addEventListener('click', function() {
   time /= 10;
-  document.querySelector('.candies').textContent = `${candyList}`;
-  document.querySelector('.lollypops').textContent = `${lollipopText}`;
 });
