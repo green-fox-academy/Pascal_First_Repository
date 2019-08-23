@@ -10,21 +10,27 @@
 </head>
 
 <body>
+    <div class="background"></div>
     <div class="form">
         <h1>Movie Selector</h1>
         <div class="container">
-            <select name="genre" placeholder="Select a genre">
-                <option>Sci-fi</option>
-                <option>Drama</option>
-                <option>Comedy</option>
+            <select name="genre">
+                <option selected disabled hidden>Select a genre</option>
+                <option type="genre">Sci-fi</option>
+                <option type="genre">Drama</option>
+                <option type="genre">Comedy</option>
             </select>
-            <select name="movie" placeholder="Select a movie"></select>
+            <select name="movie">
+                <option selected disabled hidden>Select a movie</option>
+            </select>
         </div>
         <div class="response">
             <p>The selected movie is: </p>
             <p class="answer">-</p>
         </div>
     </div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>

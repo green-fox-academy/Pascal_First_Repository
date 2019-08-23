@@ -32,7 +32,7 @@ function sumbitOnly() {
 }
 
 function subMessage() {
-  if (document.querySelector('.message').length === 0) {
+  if (document.querySelectorAll('.message').length === 0) {
     if (counter !== 0) {
       let target = document.querySelector('.form');
       let message = document.createElement('p');

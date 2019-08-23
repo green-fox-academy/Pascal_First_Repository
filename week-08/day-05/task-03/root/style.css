@@ -5,6 +5,15 @@ body {
   font-family: sans-serif;
   height: 500px;
 }
+/* 
+.background {
+  background-color: #818fd1;
+  width: 400px;
+  height: 300px;
+  padding: 60px;
+  border-radius: 15px;
+  position: absolute;
+} */
 
 .form {
   display: flex;
@@ -13,6 +22,7 @@ body {
   background-color: #f4baba;
   padding: 60px;
   border-radius: 15px;
+  box-shadow: 20px 20px 0px 2px rgba(129, 143, 209, 0.98);
 }
 
 .container {
@@ -21,14 +31,24 @@ body {
 }
 
 select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
   border-radius: 8px;
   width: 200px;
   height: 40px;
   border: 0px;
   margin-right: 5px;
+  background: url(assets/select.png) no-repeat 95% center;
+  background-color: white;
 }
 
 .response {
   display: flex;
   flex-direction: row;
+}
+.answer {
+  margin-left: 10px;
 }
