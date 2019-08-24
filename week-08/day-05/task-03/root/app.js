@@ -10,19 +10,20 @@ let movies = [
   { title: "Wayne's World", genre: 'Comedy' }
 ];
 
-let filtered = document.querySelector("[name='genre']").value;
-function isGood(value) {
-  if (value.genre === filtered) {
-    return value;
-  }
-}
-
 function filterMovies() {
-  console.log(filtered);
-  let tempArray = movies.filter(isGood);
-  console.log(tempArray);
+  let list = document.querySelector("[name='movie']");
+  if (list.length > 1) {
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+  }
+  let filtered = document.querySelector("[name='genre']").value;
+  let tempArray = movies.filter(function(element) {
+    if (element.genre === filtered) {
+      return element;
+    }
+  });
   for (let i = 0; i < tempArray.length; i++) {
-    let list = document.querySelector("[name='movie']");
     let element = document.createElement('option');
     element.className = filtered;
     element.textContent = tempArray[i].title;
@@ -30,6 +31,14 @@ function filterMovies() {
   }
 }
 
+function getName() {
+  document.querySelector('.answer').textContent = document.querySelector(
+    "[name='movie']"
+  ).value;
+}
+
 document
   .querySelector("[name='genre']")
-  .addEventListener('click', filterMovies);
+  .addEventListener('change', filterMovies);
+
+document.querySelector("[name='movie']").addEventListener('change', getName);
