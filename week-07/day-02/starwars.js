@@ -49,7 +49,6 @@ document.querySelector('.characters').addEventListener('click', e => {
       let element = document.createElement('li');
       element.textContent = `${myData.title} (${myData.release_date})`;
       page.appendChild(element);
-      console.log(myData);
     };
     let search = document.body.querySelector('input').value;
     xhr.open('GET', `${arrayToUse[i]}`);
