@@ -1,19 +1,25 @@
 'use strict';
 
 function alwaysThrows() {
-  throw console.error('OH NOES');
+  throw new Error('OH NOES');
 }
 
 function iterate(number) {
+  console.log(number);
   return number + 1;
 }
-
-const newPromise = Promise.resolve(iterate(0));
-
-newPromise.then(function(value) {
-  console.log(iterate(value));
-  console.log(iterate(value));
-  console.log(iterate(value));
-  console.log(iterate(value));
-  console.log(iterate(value));
-});
+Promise.resolve(1)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(alwaysThrows)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .catch(e => {
+    console.log(e.message);
+  });
