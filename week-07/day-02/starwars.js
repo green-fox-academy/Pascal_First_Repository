@@ -50,7 +50,6 @@ document.querySelector('.characters').addEventListener('click', e => {
       element.textContent = `${myData.title} (${myData.release_date})`;
       page.appendChild(element);
     };
-    let search = document.body.querySelector('input').value;
     xhr.open('GET', `${arrayToUse[i]}`);
     xhr.send();
   }
