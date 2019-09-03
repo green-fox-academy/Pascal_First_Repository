@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookstore</title>
+    <style src="style.css"></style>
+</head>
+
+<body>
+    <h1>Bookstore</h1>
+    <main>
+        <div class="Title">TITLE
+            <% rows.forEach(function(element, index) {%>
+            <li><%= `${element.book_name}`%></li>
+            <%})%>
+        </div>
+        <div class="Author">AUTHOR
+            <% rows.forEach(function(element, index) {%>
+            <li><%= `${element.aut_name}`%></li>
+            <%})%>
+        </div>
+        <div class="Category">CATEGORY
+            <% rows.forEach(function(element, index) {%>
+            <li><%= `${element.cate_descrip}`%></li>
+            <%})%>
+        </div>
+        <div class="Publisher">PUBLISHER
+            <% rows.forEach(function(element, index) {%>
+            <li><%= `${element.pub_name}`%></li>
+            <%})%>
+        </div>
+        <div class="Price">PRICE
+            <% rows.forEach(function(element, index) {%>
+            <li><%= `${element.book_price}`%></li>
+            <%})%>
+        </div>
+        <!-- <script src="frontend.js" type="text/javascript"></script> -->
+    </main>
+</body>
+
+</html>

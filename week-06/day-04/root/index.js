@@ -15,4 +15,3 @@ function navRight() {
 }
 
 function changeNavImg() {}
-sss;
