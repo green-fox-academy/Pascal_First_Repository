@@ -6,11 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS Grid</title>
-    <style></style>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .purple {
+            display: flex;
+            padding: 0 5%;
+            flex-direction: row;
+            background-color: indianred;
+            height: 60px;
+        }
+
+        .blue {
+            background-color: lightblue;
+            height: 55%;
+            width: 10%;
+            margin-right: 2%;
+            align-self: center;
+        }
+
+        main {
+            display: grid;
+            grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+            grid-gap: 5px;
+            padding: 5px 5% 5% 5%;
+        }
+
+        .greenOne {
+            padding: 3%;
+            background-color: lightseagreen;
+            grid-column: 1/5;
+            grid-row: 1/4;
+        }
+
+        .greenTwo {
+            padding: 3%;
+            background-color: lightseagreen;
+            grid-column: 5/9;
+            grid-row: 1/4;
+        }
+
+        .greenThree {
+            padding: 3%;
+            background-color: lightseagreen;
+            grid-column: 1/5;
+            grid-row: 4/8;
+        }
+
+        .greenFour {
+            display: flex;
+            justify-content: center;
+            background-color: lightseagreen;
+            grid-column: 5/7;
+            grid-row: 4/8;
+        }
+
+        .greenFive {
+            display: flex;
+            justify-content: center;
+            background-color: lightseagreen;
+            grid-column: 7/9;
+            grid-row: 4/8;
+        }
+
+        .red {
+            background-color: maroon;
+            width: 80%;
+            height: 80%;
+            align-self: center;
+        }
+
+        footer {
+            background-color: gray;
+            grid-column: 1/9;
+            grid-row: 8/9;
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="purple">
+        <div class="blue"></div>
+        <div class="blue"></div>
+        <div class="blue"></div>
+        <div class="blue"></div>
+    </div>
+    <main>
+        <div class="greenOne">
+            Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know
+            how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times
+            they're friends, like you and me! I should've known way back when... You know why, David? Because of the
+            kids. They called me Mr Glass.</div>
+        <div class="greenTwo">Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses
+            differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the
+            exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However
+            unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.</div>
+        <div class="greenThree">You think water moves fast? You should see ice. It moves like it has a mind. Like it
+            knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb
+            out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the
+            slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the
+            snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man
+        </div>
+        <div class="greenFour">
+            <div class="red"></div>
+        </div>
+        <div class="greenFive">
+            <div class="red"></div>
+        </div>
+        <footer></footer>
+    </main>
 </body>
 
 </html>
