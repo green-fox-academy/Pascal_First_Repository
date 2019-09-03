@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        main {
+            display: grid;
+            height: 100px;
+            background-color: darkslategray;
+            grid-template-columns: 1fr 6fr 1fr;
+            grid-gap: 5px;
+            align-self: center;
+            padding: 5px;
+        }
+
+        div {
+            display: grid;
+            background-color: cadetblue;
+            place-items: center;
+        }
+
+        div:nth-child(even) {
+            background-color: darkgoldenrod
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>left</div>
+        <div>60</div>
+        <div>right</div>
+    </main>
+</body>
+
+</html>
