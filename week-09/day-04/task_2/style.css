@@ -1,0 +1,45 @@
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+div {
+  height: 100px;
+}
+
+.one {
+  background-color: darkslategrey;
+  width: 20%;
+}
+
+.two {
+  background-color: indianred;
+  width: 60%;
+}
+
+.three {
+  background-color: mediumslateblue;
+  width: 20%;
+}
+
+@media (max-width: 400px) {
+  body {
+    display: flex;
+    flex-flow: column;
+    width: 100vh;
+    margin: 0;
+  }
+
+  .one {
+    width: 100vh;
+  }
+
+  .two {
+    width: 100vh;
+  }
+
+  .three {
+    width: 100vh;
+  }
+}
