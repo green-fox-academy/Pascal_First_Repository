@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  height: 100vh;
+  background-color: #2f3060;
+  display: grid;
+  place-items: center;
+}
+main {
+  width: 50%;
+  height: 50%;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+button {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 75px;
+  border-radius: 15px;
+  margin: 5%;
+  color: white;
+}
+
+.blue {
+  box-shadow: 0px 5px 0px 0px rgba(38, 57, 109, 1);
+  border-top: 3px solid #5577bf;
+  background: linear-gradient(#4867a8, #375393);
+}
+
+.green {
+  box-shadow: 0px 5px 0px 0px #166a40;
+  border-top: 3px solid #55d38b;
+  background: linear-gradient(#22b561, #169049);
+}
+
+.red {
+  box-shadow: 0px 5px 0px 0px #862b2f;
+  border-top: 3px solid #dc6453;
+  background: linear-gradient(#d64736, #bb372d);
+}
+
+.light {
+  box-shadow: 0px 5px 0px 0px #0c6aa0;
+  border-top: 3px solid #25c4f8;
+  background: linear-gradient(#04b5f0, #01a3eb);
+}
+
+.black {
+  box-shadow: 0px 5px 0px 0px #1e1f2e;
+  border-top: 3px solid #373939;
+  background: linear-gradient(#2b2c2e, #232426);
+}
+
+.white {
+  box-shadow: 0px 5px 0px 0px #999fb3;
+  border-top: 3px solid #fefeff;
+  background: linear-gradient(#fbfbfe, #dae1f0);
+  color: #a4a0b3;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  filter: brightness(90%);
+}
