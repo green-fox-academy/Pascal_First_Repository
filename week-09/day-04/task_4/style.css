@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  height: 100vh;
+  background-color: #313841;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  background-color: #1c242b;
+  border-radius: 10px;
+}
+
+svg path {
+  fill: white;
+}
+
+.containerDelete {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 50%;
+  margin-bottom: 40px;
+}
+.overlayDelete {
+  position: absolute;
+  bottom: 4px;
+  left: 130px;
+  background-color: #f34541;
+  width: 0;
+  height: 124px;
+  border-radius: 10px;
+  transition: 0.5s ease;
+  font-size: 45px;
+  font-weight: bolder;
+  color: white;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.containerConfirm {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 50%;
+  margin-bottom: 40px;
+}
+.overlayConfirm {
+  position: absolute;
+  bottom: 4px;
+  left: 130px;
+  background-color: #38ba7d;
+  width: 0;
+  height: 124px;
+  border-radius: 10px;
+  transition: 0.5s ease;
+  font-size: 45px;
+  font-weight: bolder;
+  color: white;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.confirm:hover path {
+  fill: #38ba7d;
+}
+
+.trash:hover path {
+  fill: #f34541;
+}
+
+.containerDelete:hover .overlayDelete {
+  width: 100%;
+}
+
+.containerConfirm:hover .overlayConfirm {
+  width: 100%;
+}
