@@ -9,6 +9,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('views'));
 app.use(express.static('assets'));
 app.use(express.static('root'));
+app.use(express.static('frontend'));
 
 app.get('/', (req, res) => {
   res.render('index.ejs', { root: __dirname });
