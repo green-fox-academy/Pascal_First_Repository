@@ -83,7 +83,7 @@ svg path {
 }
 
 .confirm:hover path {
-  fill: #38ba7d;
+  fill: blue;
 }
 
 .trash:hover path {

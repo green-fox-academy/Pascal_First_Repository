@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reddit</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Reddit</h1>
+    <% rows.forEach(function(element, index) {%>
+    <div class="post">
+        <div class="category"><%= `${element.category}`%></div>
+        <div class="info"><%= `Posted by ${element.name} at ${element.reg_date_post}`%></div>
+        <div class="content"><%= `${element.post_content}`%></div>
+    </div>
+    <%})%>
+    <form class="main" action="">
+        <h1>Add new post</h1>
+
+        <fieldset>
+            <label for="category field">Category</label>
+            <input id="category field" type="text" required />
+        </fieldset>
+
+        <fieldset>
+            <label for="text">Text</label>
+            <input id="text" type="text" required />
+        </fieldset>
+
+        <input class="button" type="submit" value="Submit" />
+
+    </form>
+    <script src="home.js"></script>
+</body>
+
+</html>
