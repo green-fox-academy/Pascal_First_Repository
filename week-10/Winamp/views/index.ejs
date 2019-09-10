@@ -20,19 +20,26 @@
         <div class="infobar">Playlists</div>
         <div class="infobarplus"><i class="fas fa-plus"></i></div>
         <div class="album">
-            <img src="img/music-placeholder.png" style="max-height: 100%; max-width: 100%;">
+            <img class="albumimg" src="img/music-placeholder.png" style="max-height: 100%; max-width: 100%;">
         </div>
         <div class="playlists">
             <div class="list">All tracks</div>
             <div class="list">Favorites</div>
         </div>
-        <div class="info"></div>
+        <div class="info">
+            <h2>track</h2>
+            <h3>artist</h3>
+        </div>
         <div class="infoplus"><i class="fas fa-plus"></i></div>
         <div class="infostar"><i class="fas fa-star"></i></div>
         <div class="tracks">
-            <div class="music"></div>
-            <div class="music"></div>
-            <div class="music"></div>
+            <% rows.forEach(function(element, index) {%>
+            <div class="track" data-url="<%=`${element.stream}`%>" data-artwork="<%=`${element.artwork}`%>"
+                data-artist="<%=`${element.artist}`%>">
+                <div class="trackname"><%= `${element.track_name}`%></div>
+                <div class="tracklength"><%= `${element.length}`%></div>
+            </div>
+            <%})%>
         </div>
     </main>
     <audio controls>

@@ -55,6 +55,7 @@ main {
 
 .list {
   padding: 2px 10px;
+  height: 17%;
 }
 
 .list:nth-child(odd) {
@@ -87,13 +88,23 @@ main {
 .tracks {
   grid-column: 19 / 37;
   grid-row: 4 / 19;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3cb879 transparent;
 }
 
-.music:nth-child(odd) {
+.track:nth-child(odd) {
   background-color: #eaeaea;
 }
 
 audio {
   width: 64%;
   background-color: #ffffff;
+}
+
+.track {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 14%;
 }

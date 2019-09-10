@@ -18,3 +18,18 @@ document.querySelector('.infobarplus').addEventListener('click', () => {
     });
   }
 });
+
+document.querySelector('.tracks').addEventListener('click', () => {
+  document.querySelector('source').src = event.target.getAttribute('data-url');
+  document.querySelector('.albumimg').src = event.target.getAttribute(
+    'data-artwork'
+  );
+  document.querySelector('h2').textContent =
+    event.target.firstChild.textContent;
+  document.querySelector('h3').textContent = event.target.getAttribute(
+    'data-artist'
+  );
+  let audio = new Audio(event.target.getAttribute('data-url'));
+  audio.src = event.target.getAttribute('data-url');
+  audio.load();
+});
