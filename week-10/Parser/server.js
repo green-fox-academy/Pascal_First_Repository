@@ -3,6 +3,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const mysql = require('mysql');
+const https = require('https');
 const xml2js = require('xml2js');
 const parser = new xml2js.Parser({ attrkey: 'ATTR' });
 const PORT = 8080;
@@ -10,10 +12,7 @@ const PORT = 8080;
 app.use(express.json());
 app.set('view engine', 'ejs');
 app.use(express.static('root'));
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
-let mysql = require('mysql');
 
 let conn = mysql.createConnection({
   host: 'localhost',
@@ -22,34 +21,48 @@ let conn = mysql.createConnection({
   database: 'winamp'
 });
 
-/* app.get('/', (req, res) => {
- 
-  conn.query(`INSERT INTO tracks (stream, artwork, track_name, artist) VALUES ();`, function(err, rows) {
-    res.render('index.ejs', { rows: rows });
-  });
-});
- */
-
 app.get('/', (req, res) => {
   res.sendFile('index.html', { root: __dirname });
 });
 
-app.post('/sent', (req, res) => {
-  let data;
-  let stream;
-  let artwork;
-  let track_name;
-  let artist;
-  parser.parseString(req.body.data, function(error, result) {
-    if (error === null) {
-      data = result;
-      console.log(data.track.stream);
-    } else {
-      console.log(error);
-    }
-  });
+let stream;
+let artwork;
+let track_name;
+let artist;
+let length;
 
-  res.send(`${data.track.stream[0]._}`);
+app.post('/sent', (req, res) => {
+  let url = req.body.data;
+  https.get(url, function(respond) {
+    let xml = '';
+    respond.on('data', function(stream) {
+      xml += stream;
+    });
+    respond.on('end', function() {
+      parser.parseString(xml, function(error, result) {
+        if (error === null) {
+          data = result.track;
+          stream = result.track.stream[0]._;
+          artwork = result.track.artwork[0];
+          track_name = result.track.name[0];
+          artist = result.track.artist[0];
+          length = `${Math.floor(
+            result.track.stream[0].ATTR.length / 60
+          )}:${result.track.stream[0].ATTR.length % 60}`;
+          console.log(length);
+        } else {
+          console.log(error);
+        }
+      });
+      conn.query(
+        `INSERT INTO tracks (stream, artwork, track_name, artist, length) VALUES (?, ?, ?, ?, ?);`,
+        [stream, artwork, track_name, artist, length],
+        (err, rows) => {
+          res.send('Uploaded');
+        }
+      );
+    });
+  });
 });
 
 conn.connect(function(err) {
