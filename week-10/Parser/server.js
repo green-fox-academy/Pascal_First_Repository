@@ -3,7 +3,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const mysql = require('mysql');
 const https = require('https');
 const xml2js = require('xml2js');
 const parser = new xml2js.Parser({ attrkey: 'ATTR' });
@@ -13,6 +12,8 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.use(express.static('root'));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+let mysql = require('mysql');
 
 let conn = mysql.createConnection({
   host: 'localhost',
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
   res.sendFile('index.html', { root: __dirname });
 });
 
+let data;
 let stream;
 let artwork;
 let track_name;
@@ -49,7 +51,7 @@ app.post('/sent', (req, res) => {
           length = `${Math.floor(
             result.track.stream[0].ATTR.length / 60
           )}:${result.track.stream[0].ATTR.length % 60}`;
-          console.log(length);
+          console.log('Parse succesfull');
         } else {
           console.log(error);
         }
