@@ -13,5 +13,3 @@ app.get('/groot', (req, res) => {
     });
   }
 });
-
-module.exports = app;
